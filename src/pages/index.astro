@@ -1,0 +1,39 @@
+---
+// Component Imports
+import Countdown from "../components/CountDown";
+
+const url = Astro.url;
+console.log(url.searchParams.toString());
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<style>
+			@font-face {
+				font-family: "Roboto Slab";
+				src: url("/Roboto Mono Bold for Powerline.ttf") format("truetype");
+				font-weight: 600;
+				font-style: normal;
+			}
+			html,
+			body {
+				font-family: system-ui;
+				font-family: "Roboto Slab", serif;
+			}
+			body {
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<Countdown client:only="solid-js" secs={5 * 60} />
+		</main>
+	</body>
+</html>

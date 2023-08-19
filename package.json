@@ -1,0 +1,24 @@
+{
+  "name": "timers",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "2.3.2",
+    "@astrojs/tailwind": "4.0.0",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
+    "astro": "^2.10.12",
+    "react": "18.2.0",
+    "react-canvas-confetti": "1.4.0",
+    "react-dom": "18.2.0",
+    "solid-js": "^1.7.6",
+    "tailwindcss": "3.3.3"
+  }
+}
