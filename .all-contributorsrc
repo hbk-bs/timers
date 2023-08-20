@@ -1,6 +1,6 @@
 {
   "projectName": "timers",
-  "projectOwner": "ff6347",
+  "projectOwner": "hbk-bs",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -9,7 +9,21 @@
   "imageSize": 128,
   "commit": true,
   "commitConvention": "angular",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "ff6347",
+      "name": "Fabian Morón Zirfas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/315106?v=4",
+      "profile": "https://fabianmoronzirfas.me",
+      "contributions": [
+        "ideas",
+        "design",
+        "code",
+        "infra"
+      ]
+    }
+  ],
   "contributorsPerLine": 7,
-  "linkToUsage": true
+  "linkToUsage": true,
+  "commitType": "docs"
 }
