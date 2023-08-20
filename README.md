@@ -15,6 +15,10 @@ npm ci
 npm run dev
 ```
 
+## Audio
+
+Audio is taken from https://pixabay.com/sound-effects/analog-timer-74998/ and under this license https://pixabay.com/service/license-summary/
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

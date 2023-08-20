@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 import "./CountDown.css";
 import confetti from "canvas-confetti";
+import { useAudio } from "../hooks/useAudio";
 interface CountdownProps {
 	secs: number;
 }
 
 export default function Countdown(props: CountdownProps) {
 	const [timeLeft, setTimeLeft] = useState(props.secs);
-
+	const [playing, toggle] = useAudio("/analog-timer-74998.mp3");
 	useEffect(() => {
-		if (timeLeft < 3 && timeLeft >= 0) {
+		if (timeLeft === 14) {
+			toggle();
+		}
+		if (timeLeft < 2 && timeLeft >= 0) {
 			confetti({
 				particleCount: 100,
 				spread: 180,
