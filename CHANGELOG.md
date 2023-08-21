@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/hbk-bs/timers/compare/v1.0.0...v1.1.0) (2023-08-21)
+
+
+### Features
+
+* **meta:** adds some meta tags and favicons ([4a8b17c](https://github.com/hbk-bs/timers/commit/4a8b17cfb8a7844bd5e06bf5ade82f6276fc8b90))
+
 # 1.0.0 (2023-08-21)
 
 
