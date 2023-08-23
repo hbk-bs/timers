@@ -108,7 +108,101 @@ import Countdown from "../components/CountDown";
 	</head>
 	<body>
 		<main>
-			<Countdown client:only="solid-js" secs={5 * 60} />
+			<count-down></count-down>
+			<script>
+				import confetti from "canvas-confetti";
+
+				class CountDown extends HTMLElement {
+					get timeLeft() {
+						return this._timeLeft;
+					}
+					set timeLeft(val) {
+						this._timeLeft = val;
+					}
+
+					get minutes() {
+						return Math.floor(this._timeLeft / 60);
+					}
+
+					get seconds() {
+						return this._timeLeft % 60;
+					}
+
+					set playing(val) {
+						this._playing = val;
+					}
+					get playing() {
+						return this._playing;
+					}
+
+					toggle() {
+						this.playing = !this.playing;
+					}
+
+					constructor() {
+						super();
+						this.playing = false;
+						const audio = new Audio("/analog-timer-74998.mp3");
+						audio.addEventListener("ended", () => (this.playing = false));
+						audio.removeEventListener("ended", () => (this.playing = false));
+
+						const div = document.createElement("div");
+						div.classList.add(
+							...["flex", "justify-center", "items-center", "h-screen"],
+						);
+						const h1 = document.createElement("h1");
+						h1.classList.add("text-9xl");
+						div.appendChild(h1);
+
+						document.querySelector("main").appendChild(div);
+
+						const defaultTimeLeft = 5 * 60;
+						this._timeLeft = defaultTimeLeft;
+						document.addEventListener("DOMContentLoaded", () => {
+							const searchParams = new URLSearchParams(window.location.search);
+							const urlSecs = searchParams.get("secs");
+							const secs = urlSecs !== null ? parseInt(urlSecs) : NaN;
+							if (!isNaN(secs) && secs > 0) {
+								this.timeLeft = secs;
+							} else {
+								this.timeLeft = defaultTimeLeft;
+							}
+							const interval = setInterval(() => {
+								this.timeLeft = this.timeLeft - 1;
+
+								if (this.timeLeft === 14) {
+									audio.play();
+								}
+								if (this.minutes <= 0 && this.seconds <= 0) {
+									h1.textContent = `${"00"}:${"00"}`;
+									audio.pause();
+								} else {
+									h1.textContent = `${this.minutes
+										.toString()
+										.padStart(2, "0")}:${this.seconds < 10 ? "0" : ""}${
+										this.seconds
+									}`;
+								}
+
+								if (this.timeLeft === 0) {
+									clearInterval(interval);
+								}
+
+								if (this.timeLeft < 1 && this.timeLeft >= 0) {
+									console.log("Confetti!");
+
+									confetti({
+										particleCount: 200,
+										spread: 180,
+										origin: { y: 0.6 },
+									});
+								}
+							}, 1000);
+						});
+					}
+				}
+				customElements.define("count-down", CountDown);
+			</script>
 		</main>
 	</body>
 </html>
