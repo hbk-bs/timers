@@ -1,10 +1,12 @@
 # Timers
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Small Astro+React application that runs timers. Call it by passing a number of seconds as a parameter and it will run a timer for that amount of time. e.g. `http://localhost:3000?secs=10` will run a 10 second timer.
+Small Astro+VanillaJS application that runs timers. Call it by passing a number of seconds as a parameter and it will run a timer for that amount of time. e.g. `http://localhost:3000?secs=10` will run a 10 second timer.
 
 ## Development
 
