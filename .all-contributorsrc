@@ -30,6 +30,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "vogelino",
+      "name": "Lucas Vogel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2759340?v=4",
+      "profile": "http://vogelino.com",
+      "contributions": [
+        "review",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
