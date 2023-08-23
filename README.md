@@ -1,9 +1,7 @@
 # Timers
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Small Astro+React application that runs timers. Call it by passing a number of seconds as a parameter and it will run a timer for that amount of time. e.g. `http://localhost:3000?secs=10` will run a 10 second timer.
@@ -30,6 +28,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://fabianmoronzirfas.me"><img src="https://avatars.githubusercontent.com/u/315106?v=4?s=128" width="128px;" alt="Fabian Morón Zirfas"/><br /><sub><b>Fabian Morón Zirfas</b></sub></a><br /><a href="#ideas-ff6347" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-ff6347" title="Design">🎨</a> <a href="https://github.com/hbk-bs/timers/commits?author=ff6347" title="Code">💻</a> <a href="#infra-ff6347" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Jaszkowic"><img src="https://avatars.githubusercontent.com/u/10830180?v=4?s=128" width="128px;" alt="Jonas Jaszkowic"/><br /><sub><b>Jonas Jaszkowic</b></sub></a><br /><a href="https://github.com/hbk-bs/timers/issues?q=author%3AJaszkowic" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
   <tfoot>
