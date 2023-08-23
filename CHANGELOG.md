@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/hbk-bs/timers/compare/v1.1.0...v1.2.0) (2023-08-23)
+
+
+### Bug Fixes
+
+* Remove import ([ad3f75a](https://github.com/hbk-bs/timers/commit/ad3f75a5319d2ee4ce5a5a8cd94e3fcdb8d423e0))
+
+
+### Features
+
+* **no bloat:** This removes react as dep ([9dde64e](https://github.com/hbk-bs/timers/commit/9dde64e034e2c2b77577b3c9b35bd7bcde8bb86d))
+
 # [1.1.0](https://github.com/hbk-bs/timers/compare/v1.0.0...v1.1.0) (2023-08-21)
 
 
