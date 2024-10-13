@@ -90,15 +90,15 @@
 		/>
 		<style>
 			@font-face {
-				font-family: "Roboto Slab";
-				src: url("/Roboto Mono Bold for Powerline.ttf") format("truetype");
+				font-family: 'Roboto Slab';
+				src: url('/Roboto Mono Bold for Powerline.ttf') format('truetype');
 				font-weight: 600;
 				font-style: normal;
 			}
 			html,
 			body {
 				font-family: system-ui;
-				font-family: "Roboto Slab", serif;
+				font-family: 'Roboto Slab', serif;
 			}
 			body {
 				margin: 0 auto;
@@ -109,7 +109,8 @@
 		<main>
 			<count-down></count-down>
 			<script>
-				import confetti from "canvas-confetti";
+				import parse from 'https://esm.sh/parse-duration@1.1.0';
+				import confetti from 'canvas-confetti';
 
 				class CountDown extends HTMLElement {
 					get timeLeft() {
@@ -141,31 +142,39 @@
 					constructor() {
 						super();
 						this.playing = false;
-						const audio = new Audio("/analog-timer-74998.mp3");
-						audio.addEventListener("ended", () => (this.playing = false));
-						audio.removeEventListener("ended", () => (this.playing = false));
+						const audio = new Audio('/analog-timer-74998.mp3');
+						audio.addEventListener('ended', () => (this.playing = false));
+						audio.removeEventListener('ended', () => (this.playing = false));
 
-						const div = document.createElement("div");
+						const div = document.createElement('div');
 						div.classList.add(
-							...["flex", "justify-center", "items-center", "h-screen"],
+							...['flex', 'justify-center', 'items-center', 'h-screen'],
 						);
-						const h1 = document.createElement("h1");
-						h1.classList.add("text-9xl");
+						const h1 = document.createElement('h1');
+						h1.classList.add('text-9xl');
 						div.appendChild(h1);
 
-						document.querySelector("main").appendChild(div);
+						document.querySelector('main').appendChild(div);
 
-						const defaultTimeLeft = 5 * 60;
+						const defaultTimeLeft = 5 * 60; // in seconds
 						this._timeLeft = defaultTimeLeft;
-						document.addEventListener("DOMContentLoaded", () => {
+						document.addEventListener('DOMContentLoaded', () => {
 							const searchParams = new URLSearchParams(window.location.search);
-							const urlSecs = searchParams.get("secs");
+							const urlSecs = searchParams.get('secs');
+							const duration = searchParams.get('duration');
+							const parsedDuration = duration ? parse(duration) : null;
 							const secs = urlSecs !== null ? parseInt(urlSecs) : NaN;
+
 							if (!isNaN(secs) && secs > 0) {
 								this.timeLeft = secs;
 							} else {
 								this.timeLeft = defaultTimeLeft;
 							}
+							// duration  always overrides urlSecs
+							if (parsedDuration) {
+								this.timeLeft = parsedDuration / 1000; // convert to seconds
+							}
+
 							const interval = setInterval(() => {
 								this.timeLeft = this.timeLeft - 1;
 
@@ -173,12 +182,12 @@
 									audio.play();
 								}
 								if (this.minutes <= 0 && this.seconds <= 0) {
-									h1.textContent = `${"00"}:${"00"}`;
+									h1.textContent = `${'00'}:${'00'}`;
 									audio.pause();
 								} else {
 									h1.textContent = `${this.minutes
 										.toString()
-										.padStart(2, "0")}:${this.seconds < 10 ? "0" : ""}${
+										.padStart(2, '0')}:${this.seconds < 10 ? '0' : ''}${
 										this.seconds
 									}`;
 								}
@@ -188,7 +197,7 @@
 								}
 
 								if (this.timeLeft < 1 && this.timeLeft >= 0) {
-									console.log("Confetti!");
+									console.log('Confetti!');
 
 									confetti({
 										particleCount: 200,
@@ -200,7 +209,7 @@
 						});
 					}
 				}
-				customElements.define("count-down", CountDown);
+				customElements.define('count-down', CountDown);
 			</script>
 		</main>
 	</body>
