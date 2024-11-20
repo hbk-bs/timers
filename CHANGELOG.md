@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/hbk-bs/timers/compare/v1.2.0...v1.3.0) (2024-11-20)
+
+
+### Features
+
+* Add duration field ([89f3ec2](https://github.com/hbk-bs/timers/commit/89f3ec2b5a08f8506469b38ca464536cccea390a))
+
 # [1.2.0](https://github.com/hbk-bs/timers/compare/v1.1.0...v1.2.0) (2023-08-23)
 
 
